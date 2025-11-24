@@ -1,68 +1,77 @@
-# python-code-challenge-one
-# Magazine Domain Project
+# Magazine Domain – Beginner Friendly Implementation
 
-This project implements a simple Object-Oriented Python domain consisting of **Author**, **Magazine**, and **Article** classes. The goal is to model relationships:
+This project implements three classes:
 
-* An **Author** has many Articles.
-* A **Magazine** has many Articles.
-* An **Article** belongs to one Author and one Magazine.
-* Authors and Magazines have a many‑to‑many relationship through Articles.
+- **Author**
+- **Magazine**
+- **Article**
 
-This implementation also includes:
+These follow the relationships:
 
-* Input validation
-* Relationship helper methods
-* Aggregate queries
-* Support for automated tests
-* Clear class responsibilities and constraints
+- An Author has many Articles
+- A Magazine has many Articles
+- Articles belong to ONE Author and ONE Magazine
+- Author and Magazine are many-to-many THROUGH Article
 
-## Files
+---
 
-* `author.py` — Contains the Author class
-* `magazine.py` — Contains the Magazine class
-* `article.py` — Contains the Article class
-* `debug.py` — A helper script for interactively testing your objects
+## 🚀 How to Run
 
-## Setup
+1. Install dependencies:
 
-```bash
 pipenv install
 pipenv shell
-pytest
-python lib/debug.py
-```
 
-## Features
+markdown
+Copy code
+
+2. Run tests:
+
+pytest
+
+markdown
+Copy code
+
+3. Test manually:
+
+python debug.py
+
+markdown
+Copy code
+
+---
+
+## 📂 Files
+
+- `author.py` → Author class
+- `magazine.py` → Magazine class
+- `article.py` → Article class
+- `debug.py` → for testing
+- `README.md` → project documentation
+
+---
+
+## ✔ Features Implemented
 
 ### Author
-
-* Read‑only name
-* List authored articles
-* List unique magazines
-* Add articles
-* Topic areas (categories written in)
+- Read-only `name`
+- `articles()`
+- `magazines()`
+- `add_article()`
+- `topic_areas()`
 
 ### Magazine
-
-* Editable name and category
-* List published articles
-* List contributors
-* Article titles
-* Frequent contributors (2+)
-* Top publisher class method
+- Editable `name` and `category`
+- `articles()`
+- `contributors()`
+- `article_titles()`
+- `contributing_authors()`
+- `top_publisher()` (class method)
 
 ### Article
+- Read-only `title`
+- Changeable `author`
+- Changeable `magazine`
+- Tracks all articles globally
 
-* Belongs to an author and magazine
-* Valid title (read‑only)
-* Tracks all instances
-
-## Notes
-
-* All invalid input raises `Exception()`
-* Uses class‑level lists to store global state for Articles and Magazines
-* Fully compatible with the provided test suite
-
-## Debugging
-
-Use `python lib/debug.py` to open an interactive REPL with sample objects.
+---
